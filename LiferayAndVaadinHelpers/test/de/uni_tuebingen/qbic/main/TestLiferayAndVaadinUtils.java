@@ -1,6 +1,6 @@
 package de.uni_tuebingen.qbic.main;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,7 +11,6 @@ import java.util.HashMap;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.portlet.PortletRequest;
 import javax.servlet.http.Cookie;
 
 import org.junit.Test;
@@ -24,6 +23,10 @@ import com.vaadin.server.WrappedSession;
 public class TestLiferayAndVaadinUtils {
 	public class StubVaadinRequest implements VaadinRequest{
 		
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		Map <String, Object> attributes = new HashMap <String, Object> ();
 		@Override
 		public String getParameter(String parameter) {

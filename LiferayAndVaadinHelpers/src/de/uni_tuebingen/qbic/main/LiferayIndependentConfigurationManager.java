@@ -2,12 +2,17 @@ package de.uni_tuebingen.qbic.main;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.util.Properties;
+
+/**
+ * Implements {@see ConfigurationManager}. Does not need Portal environment.
+ * @author wojnar
+ *
+ */
 
 public enum LiferayIndependentConfigurationManager implements ConfigurationManager {
 	Instance;
