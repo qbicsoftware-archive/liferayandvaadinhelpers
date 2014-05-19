@@ -10,5 +10,21 @@
 	<classpathentry kind="lib" path="/home/wojnar/QBiC/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23/webapps/ROOT/WEB-INF/lib/vaadin-shared.jar"/>
 	<classpathentry kind="lib" path="/home/wojnar/QBiC/liferay-portal-6.1.0-ce-ga1/tomcat-7.0.23/webapps/ROOT/WEB-INF/lib/vaadin-shared-deps.jar"/>
 	<classpathentry kind="lib" path="/DownloadPortlet/WebContent/WEB-INF/lib/util-java.jar"/>
+	<classpathentry kind="lib" path="/home/wojnar/IDE/powermock-mockito-junit-1.5.4/cglib-nodep-2.2.2.jar"/>
+	<classpathentry kind="lib" path="/home/wojnar/IDE/powermock-mockito-junit-1.5.4/mockito-all-1.9.5.jar"/>
+	<classpathentry kind="lib" path="/home/wojnar/IDE/powermock-mockito-junit-1.5.4/junit-4.11.jar"/>
+	<classpathentry kind="lib" path="/home/wojnar/IDE/powermock-mockito-junit-1.5.4/javassist-3.18.1-GA.jar"/>
+	<classpathentry kind="lib" path="/home/wojnar/IDE/powermock-mockito-junit-1.5.4/objenesis-2.1.jar"/>
+	<classpathentry kind="lib" path="/home/wojnar/IDE/powermock-mockito-junit-1.5.4/powermock-mockito-1.5.4-full.jar"/>
+	<classpathentry kind="lib" path="lib/cisd-base.jar"/>
+	<classpathentry kind="lib" path="lib/commons-codec.jar"/>
+	<classpathentry kind="lib" path="lib/commons-httpclient.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang.jar"/>
+	<classpathentry kind="lib" path="lib/dss_client.jar"/>
+	<classpathentry kind="lib" path="lib/LiferayAndVaadinHelpers.jar"/>
+	<classpathentry kind="lib" path="lib/raw-data-api.jar"/>
+	<classpathentry kind="lib" path="lib/spring.jar"/>
+	<classpathentry kind="lib" path="lib/stream-supporting-httpinvoker.jar"/>
+	<classpathentry kind="lib" path="lib/util-java.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

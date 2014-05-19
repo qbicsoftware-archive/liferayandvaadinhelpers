@@ -14,7 +14,6 @@ import com.vaadin.server.VaadinSession;
  * @author wojnar
  *
  */
-@SuppressWarnings("deprecation")
 public class VaadinSessions {
 
 	private static VaadinRequest request;

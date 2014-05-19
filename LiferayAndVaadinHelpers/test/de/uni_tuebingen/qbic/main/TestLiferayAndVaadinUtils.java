@@ -1,6 +1,6 @@
 package de.uni_tuebingen.qbic.main;
 
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,10 +15,26 @@ import javax.servlet.http.Cookie;
 
 import org.junit.Test;
 
+import com.vaadin.server.DefaultDeploymentConfiguration;
+import com.vaadin.server.ServiceException;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.server.VaadinService;
+import com.vaadin.server.VaadinServlet;
+import com.vaadin.server.VaadinServletService;
+import com.vaadin.server.VaadinSession;
 import com.vaadin.server.WrappedSession;
+import com.vaadin.ui.Label;
+import com.vaadin.ui.UI;
 
+import org.junit.Before;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.powermock.api.mockito.PowerMockito;
+import org.powermock.core.classloader.annotations.PrepareForTest;
+import org.powermock.modules.junit4.PowerMockRunner;
+
+@RunWith(PowerMockRunner.class)
 
 public class TestLiferayAndVaadinUtils {
 	public class StubVaadinRequest implements VaadinRequest{
@@ -223,16 +239,54 @@ public class TestLiferayAndVaadinUtils {
 	
 	StubVaadinRequest request;
 	public void setUp() {
+		//PowerMockito.mockStatic(VaadinSer);
+		
+	}
+	public class MyVaadinUI extends UI{
 
+		@Override
+		protected void init(VaadinRequest request) {
+			// TODO Auto-generated method stub
+			
+		}
+		
+		public com.liferay.portal.model.User tellUser(){
+			return LiferayAndVaadinUtils.getUser();
+		}
+		
+	}		
+	@Mock
+	VaadinSession vaadinsession;
+	@Mock
+	VaadinService vaadinservice;
+	@PrepareForTest({VaadinService.class, VaadinSession.class})
+	@Test
+	public void test_getUser_no_liferay_instance() {
+		//request = new StubVaadinRequest();
+		//request.setAttribute("javax.portlet.userinfo","testUser");
+		PowerMockito.mockStatic(VaadinSession.class);
+		PowerMockito.mockStatic(VaadinService.class);
+		
+		MyVaadinUI ui = new MyVaadinUI();
+		ui.init(new StubVaadinRequest());
+		ui.getSession();
+		Mockito.when(VaadinService.getCurrentRequest()).thenReturn(new StubVaadinRequest());
+		com.liferay.portal.model.User user = ui.tellUser();
+		assertEquals(user, null);
+	}
+	
+	@Test 
+	public void test_getUser_liferay_instance(){
+		fail("Not yet implemented");
+	}
+	@Test
+	public void test_isLiferayPortlet_(){
+		fail("Not yet implemented");
 	}
 	
 	@Test
-	public void test_getUser_() {
-		request = new StubVaadinRequest();
-		request.setAttribute("javax.portlet.userinfo","testUser");
-		
-		
+	public void test_getCurrentBasePath_(){
 		fail("Not yet implemented");
 	}
-
+	
 }

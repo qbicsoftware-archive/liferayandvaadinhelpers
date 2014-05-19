@@ -14,6 +14,11 @@ import de.uni_tuebingen.qbic.user.UserRelated;
  */
 public class LiferayAndVaadinUtils{	
 	private static String LiferaySpecificAttribute =  "PORTLET_ID";
+	
+	/**
+	 * returns the current Base path
+	 * @return base path of the runnnig portlet as string
+	 */
 	public static String getCurrentBasePath(){
 		return VaadinSessions.getCurrentBasePath();
 	}
