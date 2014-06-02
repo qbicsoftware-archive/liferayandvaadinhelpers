@@ -16,7 +16,7 @@ import de.uni_tuebingen.qbic.main.ConfigurationManagerFactory;
 
 
 /*public class OpenBisClient {
-	//TODO Es soll sich selbst um initialization mit Openbis k�mmern
+	//TODO Es soll sich selbst um initialization mit Openbis kuemmern
 	//einmal anmelden und in der session bleiben
 	//bis logout eingeleitet wird
 	//Donnerstag 15.30 - 16.20
