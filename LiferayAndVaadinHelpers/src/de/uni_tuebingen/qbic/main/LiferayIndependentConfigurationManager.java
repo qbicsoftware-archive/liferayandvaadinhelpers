@@ -79,10 +79,7 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
     		//load a properties file from class path, inside static method
     		portletConfig.load(input);
     		Properties config = new Properties();
-    		if(configurationFileName == null) {
-    		    configurationFileName = portletConfig.getProperty("default" + CONFIGURATION_SUFFIX);
-    		    log.warn("No configfile path found for host " + " @TODO "+", using default "+configurationFileName);
-    		}
+    		configurationFileName = portletConfig.getProperty("default" + CONFIGURATION_SUFFIX);
     		try {
     			
     		    config.load(new FileInputStream(configurationFileName));

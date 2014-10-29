@@ -64,14 +64,8 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
 	    
 	    public void init()  {
 		Properties portletConfig = PortletProps.getProperties();
-		//FacesContext context = FacesContext.getCurrentInstance();
-		//String serverName = context.getExternalContext().getRequestServerName();
 		Properties config = new Properties();
-		//configurationFileName = portletConfig.getProperty(serverName + CONFIGURATION_SUFFIX);
-		if(configurationFileName == null) {
-		    configurationFileName = portletConfig.getProperty("default" + CONFIGURATION_SUFFIX);
-		    log.warn("No configfile path found for host " + " @TODO "+", using default "+configurationFileName);
-		}
+		configurationFileName = portletConfig.getProperty("default" + CONFIGURATION_SUFFIX);
 		try {
 		    config.load(new FileReader(configurationFileName));
 		    StringWriter configDebug = new StringWriter();

@@ -2,8 +2,8 @@ package de.uni_tuebingen.qbic.main;
 
 import java.util.Arrays;
 
-import com.liferay.portal.kernel.log.Log;
-import com.liferay.portal.kernel.log.LogFactoryUtil;
+//import com.liferay.portal.kernel.log.Log;
+//import com.liferay.portal.kernel.log.LogFactoryUtil;
 
 /**
  * Abstraction helper class to keep specific logging calls out of the ethz.* code to switch
@@ -13,14 +13,14 @@ import com.liferay.portal.kernel.log.LogFactoryUtil;
  */
 public class Logger {
 
-	Log liferayLog;
+	//Log liferayLog;
 	
 	/**
 	 * The constructor initializes the underlying logger object (e.g.
 	 * liferayLog)
 	 */
 	public Logger(Class<?> c) {
-		liferayLog = LogFactoryUtil.getLog(c);
+		//liferayLog = LogFactoryUtil.getLog(c);
 	}
 	
 	/**
@@ -28,7 +28,8 @@ public class Logger {
 	 * @param s string to log
 	 */
 	public void debug(String s) {
-		liferayLog.debug(s);
+		//liferayLog.debug(s);
+		System.out.println("DEBUG: "+s );
 	}
 	
 	/**
@@ -39,7 +40,8 @@ public class Logger {
 	 * @param s string to log
 	 */
 	public void info(String s) {
-		liferayLog.info(s);
+		System.out.println("INFO: "+s );
+		//liferayLog.info(s);
 	}
 	
 	/**
@@ -47,7 +49,8 @@ public class Logger {
 	 * @param s string to log
 	 */
 	public void warn(String s) {
-		liferayLog.warn(s);
+		System.out.println("WARN: "+s );
+		//liferayLog.warn(s);
 	}
 	
 	/**
@@ -56,7 +59,8 @@ public class Logger {
 	 * @param s string to log
 	 */
 	public void error(String s) {
-		liferayLog.error(s);
+		System.out.println("ERROR: "+s );
+		//liferayLog.error(s);
 	}
 	
 	/**
@@ -68,7 +72,8 @@ public class Logger {
 	public void error(String s, Throwable t) {
 		//do not fill logfile with millions of lines per error, please
 		t.setStackTrace(Arrays.copyOfRange(t.getStackTrace(), 0, 10));
-		liferayLog.error(s,t);
+		System.out.println("ERROR: "+s +"..... " + t.getMessage() );
+		//liferayLog.error(s,t);
 	}
 	
 }
