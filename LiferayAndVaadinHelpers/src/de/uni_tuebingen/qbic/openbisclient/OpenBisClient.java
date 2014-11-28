@@ -108,7 +108,7 @@ public class OpenBisClient{
 	  private void initOpenBisService(){
 		      ConfigurationManager manager = ConfigurationManagerFactory.getInstance();
 		      ServiceFinder serviceFinder = new ServiceFinder("openbis", IGeneralInformationService.SERVICE_URL);
-		      this.openbisInfoService = serviceFinder.createService(IGeneralInformationService.class, manager.getDataSourceURL());
+		      this.openbisInfoService = serviceFinder.createService(IGeneralInformationService.class, manager.getDataSourceUrl());
 		       this.sessionToken = openbisInfoService.tryToAuthenticateForAllServices(manager.getDataSourceUser(), manager.getDataSourcePassword());
 		    }
 

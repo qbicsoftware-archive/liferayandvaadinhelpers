@@ -109,6 +109,7 @@ public class LiferayUserDummy implements User {
 	@Override
 	public String getEmailAddress() {
 		return null;
+		
 	}
 	/**
 	 * TODO
@@ -1035,50 +1036,6 @@ public class LiferayUserDummy implements User {
 	public void setTimeZoneId(String arg0) {
 		// TODO Auto-generated method stub
 
-	}
-	@Override
-	public User toUnescapedModel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public Map<String, Object> getModelAttributes() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public void setModelAttributes(Map<String, Object> arg0) {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public String getDisplayURL(ThemeDisplay arg0, boolean arg1)
-			throws PortalException, SystemException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public String getDisplayURL(String arg0, String arg1, boolean arg2)
-			throws PortalException, SystemException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<EmailAddress> getEmailAddresses() throws SystemException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public long[] getOrganizationIds(boolean arg0) throws PortalException,
-			SystemException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	@Override
-	public List<Organization> getOrganizations(boolean arg0)
-			throws PortalException, SystemException {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

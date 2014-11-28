@@ -57,7 +57,7 @@ public class LiferayAndVaadinUtils{
 	public static OpenBisClient getOpenBisClient(){
 		ConfigurationManager manager = ConfigurationManagerFactory.getInstance();
 		
-		return new OpenBisClient(manager.getDataSourceUser(), manager.getDataSourcePassword(), manager.getDataSourceURL(), false);
+		return new OpenBisClient(manager.getDataSourceUser(), manager.getDataSourcePassword(), manager.getDataSourceUrl(), false);
 	}
 	
 }
