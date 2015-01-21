@@ -23,6 +23,9 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
   public static final String DATASOURCE_URL = "datasource.url";
   public static final String GENOMEVIEWER_URL = "genomeviewer.url";
   public static final String GENOMEVIEWER_RESTAPI = "genomeviewer.restapi";
+  public static final String TMP_FOLDER = "tmp.folder";
+  public static final String SCRIPTS_FOLDER = "barcode.scripts";
+  public static final String PATH_VARIABLE = "path.variable";
 
   private static Logger log = new Logger(LiferayConfigurationManager.class);
 
@@ -35,6 +38,10 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
 
   private String genomeViewerUrl;
   private String genomeViewerRestApi;
+  
+  private String tmpFolder;
+  private String scriptsFolder;
+  private String pathVariable;
 
 
   private boolean initialized = false;
@@ -60,6 +67,10 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
       dataSourceUrl = config.getProperty(DATASOURCE_URL);
       genomeViewerUrl = config.getProperty(GENOMEVIEWER_URL);
       genomeViewerRestApi = config.getProperty(GENOMEVIEWER_RESTAPI);
+      tmpFolder = config.getProperty(TMP_FOLDER);
+      scriptsFolder = config.getProperty(SCRIPTS_FOLDER);
+      pathVariable = config.getProperty(PATH_VARIABLE);
+      
     } catch (IOException e) {
       log.error("Failed to load configuration: ", e);
     }
@@ -99,5 +110,20 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
   @Override
   public String getGenomeViewerRestApiUrl() {
     return genomeViewerRestApi;
+  }
+
+  @Override
+  public String getScriptsFolder() {
+    return scriptsFolder;
+  }
+
+  @Override
+  public String getTmpFolder() {
+    return tmpFolder;
+  }
+
+  @Override
+  public String getPathVariable() {
+    return pathVariable;
   }
 }

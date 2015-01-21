@@ -23,5 +23,11 @@ public interface ConfigurationManager {
 	  
 	  public String getGenomeViewerRestApiUrl();
 	  
+	  public String getScriptsFolder();
+	  
+	  public String getTmpFolder();
+	  
+	  public String getPathVariable();
+	  
 	  public boolean isInitialized();
 }
