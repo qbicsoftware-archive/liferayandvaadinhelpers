@@ -3,7 +3,6 @@ package de.uni_tuebingen.qbic.main;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 
-import de.uni_tuebingen.qbic.openbisclient.OpenBisClient;
 import de.uni_tuebingen.qbic.sessions.VaadinSessions;
 import de.uni_tuebingen.qbic.user.UserRelated;
 
@@ -47,17 +46,6 @@ public class LiferayAndVaadinUtils{
 		String remoteuser = VaadinService.getCurrentRequest().getRemoteUser();
 		Object PORTLET_ID = VaadinService.getCurrentRequest().getAttribute(LiferayAndVaadinUtils.LiferaySpecificAttribute);
 		return remoteuser != null && PORTLET_ID != null;
-	}
-	
-	/**
-	 * Initializes a new OpenBisClient instance with values from the default properties file included in the portlet
-	 * Does it through errors?
-	 * @return OpenBisClient instance
-	 */
-	public static OpenBisClient getOpenBisClient(){
-		ConfigurationManager manager = ConfigurationManagerFactory.getInstance();
-		
-		return new OpenBisClient(manager.getDataSourceUser(), manager.getDataSourcePassword(), manager.getDataSourceUrl(), false);
 	}
 	
 }
