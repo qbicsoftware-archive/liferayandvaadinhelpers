@@ -1,10 +1,7 @@
 package de.uni_tuebingen.qbic.main;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.PrintWriter;
-import java.io.StringWriter;
 import java.util.Properties;
 
 /**
@@ -26,8 +23,6 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
   public static final String TMP_FOLDER = "tmp.folder";
   public static final String SCRIPTS_FOLDER = "barcode.scripts";
   public static final String PATH_VARIABLE = "path.variable";
-
-  private static Logger log = new Logger(LiferayConfigurationManager.class);
 
 
   private String configurationFileName;
@@ -70,28 +65,15 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
       // load a properties file from class path, inside static method
       portletConfig.load(input);
       Properties config = new Properties();
-      configurationFileName = portletConfig.getProperty("default" + CONFIGURATION_SUFFIX);
-      try {
-
-        config.load(new FileInputStream(configurationFileName));
-        StringWriter configDebug = new StringWriter();
-        config.list(new PrintWriter(configDebug));
-        dataSource = config.getProperty(DATASOURCE_KEY, "openBIS");
-        dataSourceUser = config.getProperty(DATASOURCE_USER);
-        dataSourcePass = config.getProperty(DATASOURCE_PASS);
-        dataSourceUrl = config.getProperty(DATASOURCE_URL);
-        genomeViewerUrl = config.getProperty(GENOMEVIEWER_URL);
-        genomeViewerRestApi = config.getProperty(GENOMEVIEWER_RESTAPI);
-        tmpFolder = config.getProperty(TMP_FOLDER);
-        scriptsFolder = config.getProperty(SCRIPTS_FOLDER);
-        pathVariable = config.getProperty(PATH_VARIABLE);
-        
-      } catch (IOException e) {
-        log.error("Failed to load configuration: ", e);
-      }
-
-
-
+      dataSource = portletConfig.getProperty(DATASOURCE_KEY, "openBIS");
+      dataSourceUser = portletConfig.getProperty(DATASOURCE_USER);
+      dataSourcePass = portletConfig.getProperty(DATASOURCE_PASS);
+      dataSourceUrl = portletConfig.getProperty(DATASOURCE_URL);
+      genomeViewerUrl = portletConfig.getProperty(GENOMEVIEWER_URL);
+      genomeViewerRestApi = portletConfig.getProperty(GENOMEVIEWER_RESTAPI);
+      tmpFolder = portletConfig.getProperty(TMP_FOLDER);
+      scriptsFolder = portletConfig.getProperty(SCRIPTS_FOLDER);
+      pathVariable = portletConfig.getProperty(PATH_VARIABLE);
     } catch (IOException ex) {
       ex.printStackTrace();
     } finally {

@@ -10,7 +10,6 @@
 	<classpathentry kind="lib" path="lib/commons-httpclient.jar"/>
 	<classpathentry kind="lib" path="lib/commons-lang.jar"/>
 	<classpathentry kind="lib" path="lib/dss_client.jar"/>
-	<classpathentry kind="lib" path="lib/LiferayAndVaadinHelpers.jar"/>
 	<classpathentry kind="lib" path="lib/raw-data-api.jar"/>
 	<classpathentry kind="lib" path="lib/spring.jar"/>
 	<classpathentry kind="lib" path="lib/stream-supporting-httpinvoker.jar"/>
@@ -22,5 +21,7 @@
 	<classpathentry kind="lib" path="lib_test/objenesis-2.1.jar"/>
 	<classpathentry kind="lib" path="lib_test/powermock-mockito-1.5.4-full.jar"/>
 	<classpathentry kind="con" path="org.apache.ivyde.eclipse.cpcontainer.IVYDE_CONTAINER/?project=LiferayAndVaadinHelpers&amp;ivyXmlPath=ivy.xml&amp;confs=*&amp;ivySettingsPath=ivysettings.xml&amp;loadSettingsOnDemand=false&amp;ivyUserDir=&amp;propertyFiles="/>
+	<classpathentry kind="lib" path="lib_test/truth-0.25.jar"/>
+	<classpathentry kind="lib" path="lib_test/guava-15.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
