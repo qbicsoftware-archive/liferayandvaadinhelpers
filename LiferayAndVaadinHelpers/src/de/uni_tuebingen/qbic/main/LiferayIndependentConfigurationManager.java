@@ -18,11 +18,22 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
   public static final String DATASOURCE_USER = "datasource.user";
   public static final String DATASOURCE_PASS = "datasource.password";
   public static final String DATASOURCE_URL = "datasource.url";
+
   public static final String GENOMEVIEWER_URL = "genomeviewer.url";
   public static final String GENOMEVIEWER_RESTAPI = "genomeviewer.restapi";
+
   public static final String TMP_FOLDER = "tmp.folder";
   public static final String SCRIPTS_FOLDER = "barcode.scripts";
   public static final String PATH_VARIABLE = "path.variable";
+
+  public static final String PATH_TO_GUSE_WORKFLOWS = "path_to_guse_workflows";
+  public static final String PATH_TO_GUSE_CERTIFICATE = "path_to_certificate";
+  public static final String PATH_TO_WF_CONFIG = "path_to_wf_config";
+
+  public static final String PATH_TO_DROPBOXES = "path_to_dropboxes";
+
+  public static final String GUSE_REMOTE_API_URL = "guse_remoteapi_url";
+  public static final String GUSE_REMOTE_API_PASS = "guse_remoteapi_password";
 
 
   private String configurationFileName;
@@ -32,21 +43,37 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
   private String dataSourceUrl;
   private String genomeViewerUrl;
   private String genomeViewerRestApi;
-  
+
   private String tmpFolder;
   private String scriptsFolder;
   private String pathVariable;
-  
+
+  private String pathToGuseWorkflows;
+  private String pathToGuseCertificate;
+  private String pathToWFConfig;
+
+  private String pathToDropboxes;
+
+  private String guseRemoteApiUrl;
+  private String guseRemoteApiPass;
+
   private String portletPropertiesFileName = "portlet.properties";
 
   private boolean initialized = false;
 
-  /*
-   * LiferayIndependentConfigurationManager(){ init(); }
-   */
 
   public boolean isInitialized() {
     return initialized;
+  }
+
+  /**
+   * init the portlet with the following properties file.
+   * 
+   * @param portletPropertiesFileName
+   */
+  public void init(String portletPropertiesFileName) {
+    this.portletPropertiesFileName = portletPropertiesFileName;
+    init();
   }
 
   public void init() {
@@ -64,16 +91,27 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
 
       // load a properties file from class path, inside static method
       portletConfig.load(input);
-      Properties config = new Properties();
       dataSource = portletConfig.getProperty(DATASOURCE_KEY, "openBIS");
       dataSourceUser = portletConfig.getProperty(DATASOURCE_USER);
       dataSourcePass = portletConfig.getProperty(DATASOURCE_PASS);
       dataSourceUrl = portletConfig.getProperty(DATASOURCE_URL);
+
       genomeViewerUrl = portletConfig.getProperty(GENOMEVIEWER_URL);
       genomeViewerRestApi = portletConfig.getProperty(GENOMEVIEWER_RESTAPI);
+
       tmpFolder = portletConfig.getProperty(TMP_FOLDER);
       scriptsFolder = portletConfig.getProperty(SCRIPTS_FOLDER);
       pathVariable = portletConfig.getProperty(PATH_VARIABLE);
+      pathToGuseWorkflows = portletConfig.getProperty(PATH_TO_GUSE_WORKFLOWS);
+      pathToGuseCertificate = portletConfig.getProperty(PATH_TO_GUSE_CERTIFICATE);
+      pathToWFConfig = portletConfig.getProperty(PATH_TO_WF_CONFIG);
+
+      pathToDropboxes = portletConfig.getProperty(PATH_TO_DROPBOXES);
+
+      guseRemoteApiUrl = portletConfig.getProperty(GUSE_REMOTE_API_URL);
+      guseRemoteApiPass = portletConfig.getProperty(GUSE_REMOTE_API_PASS);
+
+
     } catch (IOException ex) {
       ex.printStackTrace();
     } finally {
@@ -125,7 +163,7 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
   }
 
   @Override
-  public String getScriptsFolder() {
+  public String getBarcodeScriptsFolder() {
     return scriptsFolder;
   }
 
@@ -135,7 +173,67 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
   }
 
   @Override
-  public String getPathVariable() {
+  public String getBarcodePathVariable() {
     return pathVariable;
+  }
+
+  @Override
+  public String getPathToGuseWorkflows() {
+    return pathToGuseWorkflows;
+  }
+
+  @Override
+  public void setPathToGuseWorkflows(String pathToGuseWorkflows) {
+    this.pathToGuseWorkflows = pathToGuseWorkflows;
+  }
+
+  @Override
+  public String getPathToGuseCertificate() {
+    return pathToGuseCertificate;
+  }
+
+  @Override
+  public void setPathToGuseCertificate(String pathToGuseCertificate) {
+    this.pathToGuseCertificate = pathToGuseCertificate;
+  }
+
+  @Override
+  public String getPathToWFConfig() {
+    return pathToWFConfig;
+  }
+
+  @Override
+  public void setPathToWFConfig(String pathToWFConfig) {
+    this.pathToWFConfig = pathToWFConfig;
+  }
+
+  @Override
+  public String getPathToDropboxes() {
+    return pathToDropboxes;
+  }
+
+  @Override
+  public void setPathToDropboxes(String pathToDropboxes) {
+    this.pathToDropboxes = pathToDropboxes;
+  }
+
+  @Override
+  public String getGuseRemoteApiUrl() {
+    return guseRemoteApiUrl;
+  }
+
+  @Override
+  public void setGuseRemoteApiUrl(String guseRemoteApiUrl) {
+    this.guseRemoteApiUrl = guseRemoteApiUrl;
+  }
+
+  @Override
+  public String getGuseRemoteApiPass() {
+    return guseRemoteApiPass;
+  }
+
+  @Override
+  public void setGuseRemoteApiPass(String guseRemoteApiPass) {
+    this.guseRemoteApiPass = guseRemoteApiPass;
   }
 }

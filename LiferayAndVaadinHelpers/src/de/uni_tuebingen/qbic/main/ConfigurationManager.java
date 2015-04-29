@@ -2,32 +2,60 @@ package de.uni_tuebingen.qbic.main;
 
 
 /**
- * The ConfigurationManger interface represents the entire .properties file.
- * One might think about adding a getAttribute method in order to make it more generic.
+ * The ConfigurationManger interface represents the entire .properties file. One might think about
+ * adding a getAttribute method in order to make it more generic.
+ * 
  * @author wojnar
- *
+ * 
  */
 public interface ConfigurationManager {
 
-	  public String getConfigurationFileName();
+  public String getConfigurationFileName();
 
-	  public String getDataSource();
+  public String getDataSource();
 
-	  public String getDataSourceUser();
+  public String getDataSourceUser();
 
-	  public String getDataSourcePassword();
+  public String getDataSourcePassword();
 
-	  public String getDataSourceUrl();
-	  
-	  public String getGenomeViewerUrl();
-	  
-	  public String getGenomeViewerRestApiUrl();
-	  
-	  public String getScriptsFolder();
-	  
-	  public String getTmpFolder();
-	  
-	  public String getPathVariable();
-	  
-	  public boolean isInitialized();
+  public String getDataSourceUrl();
+
+  public String getGenomeViewerUrl();
+
+  public String getGenomeViewerRestApiUrl();
+
+  public String getBarcodeScriptsFolder();
+
+  public String getTmpFolder();
+
+  public String getBarcodePathVariable();
+
+  public String getPathToGuseWorkflows();
+
+  public void setPathToGuseWorkflows(String pathToGuseWorkflows);
+
+  public String getPathToGuseCertificate();
+
+  public void setPathToGuseCertificate(String pathToGuseCertificate);
+
+  public String getPathToWFConfig();
+
+  public void setPathToWFConfig(String pathToWFConfig);
+
+  public String getPathToDropboxes();
+
+  void setPathToDropboxes(String pathToDropboxes);
+
+  public boolean isInitialized();
+
+  public String getGuseRemoteApiUrl();
+
+  public void setGuseRemoteApiUrl(String guseRemoteApiUrl);
+
+  public String getGuseRemoteApiPass();
+
+  public void setGuseRemoteApiPass(String guseRemoteApiPass);
+
+
+
 }
