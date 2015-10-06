@@ -56,6 +56,12 @@ public interface ConfigurationManager {
 
   public void setGuseRemoteApiPass(String guseRemoteApiPass);
 
-
+  public String getAttachmentURI();
+  
+  public String getAttachmentUser();
+  
+  public String getAttachmenPassword();
+  
+  public String getAttachmentMaxSize();
 
 }

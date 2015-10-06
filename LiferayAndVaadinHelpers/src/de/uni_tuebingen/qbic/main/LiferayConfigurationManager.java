@@ -11,7 +11,7 @@ import com.liferay.util.portlet.PortletProps; // util-java.jar
  * 
  */
 public enum LiferayConfigurationManager implements ConfigurationManager {
-  Instance;
+	Instance;
   public static final String DATASOURCE_KEY = "datasource";
   public static final String DATASOURCE_USER = "datasource.user";
   public static final String DATASOURCE_PASS = "datasource.password";
@@ -32,6 +32,11 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
 
   public static final String GUSE_REMOTE_API_URL = "guse_remoteapi_url";
   public static final String GUSE_REMOTE_API_PASS = "guse_remoteapi_password";
+  
+  public static final String ATTACHMENT_URI = "attachment.uri";
+  public static final String ATTACHMENT_USER = "attachment.user";
+  public static final String ATTACHMENT_PASS = "attachment.password";
+  public static final String ATTACHMENT_MAX_SIZE = "max.attachment.size";
 
   private String configurationFileName;
   private String dataSource;
@@ -56,6 +61,10 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
   private String guseRemoteApiPass;
 
   private boolean initialized = false;
+private String attachmentURI;
+private String attachmentUser;
+private String attachmentPass;
+private String attachmentMaxSize;
 
   /*
    * private LiferayConfigurationManager(){ init(); }
@@ -86,7 +95,12 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
 
     guseRemoteApiUrl = portletConfig.getProperty(GUSE_REMOTE_API_URL);
     guseRemoteApiPass = portletConfig.getProperty(GUSE_REMOTE_API_PASS);
-
+   
+    attachmentURI = portletConfig.getProperty(ATTACHMENT_URI);
+    attachmentUser = portletConfig.getProperty(ATTACHMENT_USER);
+    attachmentPass = portletConfig.getProperty(ATTACHMENT_PASS);
+    attachmentMaxSize = portletConfig.getProperty(ATTACHMENT_MAX_SIZE);
+    
     initialized = true;
   }
 
@@ -198,6 +212,26 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
   @Override
   public void setGuseRemoteApiPass(String guseRemoteApiPass) {
     this.guseRemoteApiPass = guseRemoteApiPass;
+  }
+
+  @Override
+  public String getAttachmentURI() {
+  	return attachmentURI;
+  }
+
+  @Override
+  public String getAttachmentUser() {
+  	return attachmentUser;
+  }
+
+  @Override
+  public String getAttachmenPassword() {
+  	return attachmentPass;
+  }
+
+  @Override
+  public String getAttachmentMaxSize() {
+  	return attachmentMaxSize;
   }
 
 }

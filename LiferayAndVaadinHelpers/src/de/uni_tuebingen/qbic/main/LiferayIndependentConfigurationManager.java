@@ -34,6 +34,11 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
 
   public static final String GUSE_REMOTE_API_URL = "guse_remoteapi_url";
   public static final String GUSE_REMOTE_API_PASS = "guse_remoteapi_password";
+  
+  public static final String ATTACHMENT_URI = "attachment.uri";
+  public static final String ATTACHMENT_USER = "attachment.user";
+  public static final String ATTACHMENT_PASS = "attachment.password";
+  public static final String ATTACHMENT_MAX_SIZE = "max.attachment.size";
 
 
   private String configurationFileName;
@@ -56,6 +61,11 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
 
   private String guseRemoteApiUrl;
   private String guseRemoteApiPass;
+  
+  private String attachmentURI;
+  private String attachmentUser;
+  private String attachmentPass;
+  private String attachmentMaxSize;
 
   private String portletPropertiesFileName = "portlet.properties";
 
@@ -110,6 +120,11 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
 
       guseRemoteApiUrl = portletConfig.getProperty(GUSE_REMOTE_API_URL);
       guseRemoteApiPass = portletConfig.getProperty(GUSE_REMOTE_API_PASS);
+      
+      attachmentURI = portletConfig.getProperty(ATTACHMENT_URI);
+      attachmentUser = portletConfig.getProperty(ATTACHMENT_USER);
+      attachmentPass = portletConfig.getProperty(ATTACHMENT_PASS);
+      attachmentMaxSize = portletConfig.getProperty(ATTACHMENT_MAX_SIZE);
 
 
     } catch (IOException ex) {
@@ -236,4 +251,24 @@ public enum LiferayIndependentConfigurationManager implements ConfigurationManag
   public void setGuseRemoteApiPass(String guseRemoteApiPass) {
     this.guseRemoteApiPass = guseRemoteApiPass;
   }
+
+@Override
+public String getAttachmentURI() {
+	return attachmentURI;
+}
+
+@Override
+public String getAttachmentUser() {
+	return attachmentUser;
+}
+
+@Override
+public String getAttachmenPassword() {
+	return attachmentPass;
+}
+
+@Override
+public String getAttachmentMaxSize() {
+	return attachmentMaxSize;
+}
 }
