@@ -63,5 +63,14 @@ public interface ConfigurationManager {
   public String getAttachmenPassword();
   
   public String getAttachmentMaxSize();
-
+  
+  public String getMsqlHost();
+  
+  public String getMysqlPort();
+  
+  public String getMysqlDB();
+  
+  public String getMysqlUser();
+  
+  public String getMysqlPass();
 }

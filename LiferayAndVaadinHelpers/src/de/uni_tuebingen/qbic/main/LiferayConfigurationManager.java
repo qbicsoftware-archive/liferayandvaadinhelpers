@@ -37,6 +37,12 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
   public static final String ATTACHMENT_USER = "attachment.user";
   public static final String ATTACHMENT_PASS = "attachment.password";
   public static final String ATTACHMENT_MAX_SIZE = "max.attachment.size";
+  
+  public static final String MSQL_HOST  = "mysql.host";
+  public static final String MSQL_DB = "mysql.db";
+  public static final String MSQL_USER = "mysql.user";
+  public static final String MSQL_PORT = "mysql.port";
+  public static final String MSQL_PASS = "mysql.pass";
 
   private String configurationFileName;
   private String dataSource;
@@ -59,12 +65,19 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
 
   private String guseRemoteApiUrl;
   private String guseRemoteApiPass;
+  
+  private String attachmentURI;
+  private String attachmentUser;
+  private String attachmentPass;
+  private String attachmentMaxSize;
+  
+  private String msqlHost;
+  private String msqlDB;
+  private String msqlUser;
+  private String msqlPort;
+  private String msqlPass;
 
   private boolean initialized = false;
-private String attachmentURI;
-private String attachmentUser;
-private String attachmentPass;
-private String attachmentMaxSize;
 
   /*
    * private LiferayConfigurationManager(){ init(); }
@@ -100,6 +113,12 @@ private String attachmentMaxSize;
     attachmentUser = portletConfig.getProperty(ATTACHMENT_USER);
     attachmentPass = portletConfig.getProperty(ATTACHMENT_PASS);
     attachmentMaxSize = portletConfig.getProperty(ATTACHMENT_MAX_SIZE);
+    
+    msqlHost = portletConfig.getProperty(MSQL_HOST);
+    msqlDB = portletConfig.getProperty(MSQL_DB);
+    msqlUser = portletConfig.getProperty(MSQL_USER);
+    msqlPort = portletConfig.getProperty(MSQL_PORT);
+    msqlPass = portletConfig.getProperty(MSQL_PASS);
     
     initialized = true;
   }
@@ -233,5 +252,30 @@ private String attachmentMaxSize;
   public String getAttachmentMaxSize() {
   	return attachmentMaxSize;
   }
+
+	@Override
+	public String getMsqlHost() {
+		return msqlHost;
+	}
+	
+	@Override
+	public String getMysqlPort() {
+		return msqlPort;
+	}
+	
+	@Override
+	public String getMysqlDB() {
+		return msqlDB;
+	}
+	
+	@Override
+	public String getMysqlUser() {
+		return msqlUser;
+	}
+	
+	@Override
+	public String getMysqlPass() {
+		return msqlPass;
+	}
 
 }
