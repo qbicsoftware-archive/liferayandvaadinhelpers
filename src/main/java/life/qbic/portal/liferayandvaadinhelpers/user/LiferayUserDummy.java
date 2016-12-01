@@ -770,13 +770,13 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
-	public long[] getGroupIds() throws PortalException, SystemException {
+	public long[] getGroupIds() throws SystemException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public List<Group> getGroups() throws PortalException, SystemException {
+	public List<Group> getGroups() throws SystemException {
 		// TODO Auto-generated method stub
 		return null;
 	}
