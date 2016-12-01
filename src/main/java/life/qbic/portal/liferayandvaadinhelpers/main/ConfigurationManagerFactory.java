@@ -1,4 +1,4 @@
-package de.uni_tuebingen.qbic.main;
+package life.qbic.portal.liferayandvaadinhelpers.main;
 
 /**
  * The ConfigurationManager Factory has only the getInstance mehtod. Dependigng on whether the

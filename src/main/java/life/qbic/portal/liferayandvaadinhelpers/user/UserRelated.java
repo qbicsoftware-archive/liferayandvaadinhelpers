@@ -1,4 +1,4 @@
-package de.uni_tuebingen.qbic.user;
+package life.qbic.portal.liferayandvaadinhelpers.user;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;

@@ -1,10 +1,10 @@
-package de.uni_tuebingen.qbic.main;
+package life.qbic.portal.liferayandvaadinhelpers.main;
 
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 
-import de.uni_tuebingen.qbic.sessions.VaadinSessions;
-import de.uni_tuebingen.qbic.user.UserRelated;
+import life.qbic.portal.liferayandvaadinhelpers.sessions.VaadinSessions;
+import life.qbic.portal.liferayandvaadinhelpers.user.UserRelated;
 
 
 /**

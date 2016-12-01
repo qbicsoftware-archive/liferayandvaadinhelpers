@@ -1,4 +1,4 @@
-package de.uni_tuebingen.qbic.sessions;
+package life.qbic.portal.liferayandvaadinhelpers.sessions;
 
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package de.uni_tuebingen.qbic.util;
+package life.qbic.portal.liferayandvaadinhelpers.util;
 
 public class DashboardUtil {
 	/**
