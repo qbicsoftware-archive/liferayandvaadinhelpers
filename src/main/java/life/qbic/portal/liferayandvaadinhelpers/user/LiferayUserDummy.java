@@ -10,19 +10,9 @@ import java.util.TimeZone;
 
 import com.liferay.portal.kernel.exception.PortalException;
 import com.liferay.portal.kernel.exception.SystemException;
-import com.liferay.portal.model.Address;
-import com.liferay.portal.model.CacheModel;
-import com.liferay.portal.model.Contact;
-import com.liferay.portal.model.EmailAddress;
-import com.liferay.portal.model.Group;
-import com.liferay.portal.model.Organization;
-import com.liferay.portal.model.PasswordPolicy;
-import com.liferay.portal.model.Phone;
-import com.liferay.portal.model.Role;
-import com.liferay.portal.model.Team;
-import com.liferay.portal.model.User;
-import com.liferay.portal.model.UserGroup;
-import com.liferay.portal.model.Website;
+import com.liferay.portal.kernel.lar.StagedModelType;
+import com.liferay.portal.kernel.util.RemotePreference;
+import com.liferay.portal.model.*;
 import com.liferay.portal.service.ServiceContext;
 import com.liferay.portal.theme.ThemeDisplay;
 import com.liferay.portlet.expando.model.ExpandoBridge;
@@ -125,6 +115,21 @@ public class LiferayUserDummy implements User {
 	@Override
 	public ExpandoBridge getExpandoBridge() {
 		return null;
+	}
+
+	@Override
+	public Map<String, Object> getModelAttributes() {
+		return null;
+	}
+
+	@Override
+	public void setExpandoBridgeAttributes(BaseModel<?> baseModel) {
+
+	}
+
+	@Override
+	public void setExpandoBridgeAttributes(ExpandoBridge expandoBridge) {
+
 	}
 
 	/**
@@ -236,6 +241,11 @@ public class LiferayUserDummy implements User {
 	@Override
 	public Date getModifiedDate() {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public StagedModelType getStagedModelType() {
 		return null;
 	}
 
@@ -456,9 +466,24 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
+	public void setModelAttributes(Map<String, Object> map) {
+
+	}
+
+	@Override
 	public void setFacebookId(long arg0) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public long getLdapServerId() {
+		return 0;
+	}
+
+	@Override
+	public void setLdapServerId(long l) {
+		// TODO Auto-generated method stub
 	}
 
 	@Override
@@ -660,6 +685,11 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
+	public User toUnescapedModel() {
+		return null;
+	}
+
+	@Override
 	public String toXmlString() {
 		// TODO Auto-generated method stub
 		return null;
@@ -687,6 +717,11 @@ public class LiferayUserDummy implements User {
 	public void persist() throws SystemException {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public void addRemotePreference(RemotePreference remotePreference) {
+		
 	}
 
 	@Override
@@ -739,9 +774,24 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
+	public String getDisplayURL(ThemeDisplay themeDisplay, boolean b) throws PortalException, SystemException {
+		return null;
+	}
+
+	@Override
+	public List<EmailAddress> getEmailAddresses() throws SystemException {
+		return null;
+	}
+
+	@Override
 	public String getDisplayURL(String arg0, String arg1)
 			throws PortalException, SystemException {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getDisplayURL(String s, String s1, boolean b) throws PortalException, SystemException {
 		return null;
 	}
 
@@ -800,6 +850,31 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
+	public List<Group> getMySiteGroups() throws PortalException, SystemException {
+		return null;
+	}
+
+	@Override
+	public List<Group> getMySiteGroups(boolean b, int i) throws PortalException, SystemException {
+		return null;
+	}
+
+	@Override
+	public List<Group> getMySiteGroups(int i) throws PortalException, SystemException {
+		return null;
+	}
+
+	@Override
+	public List<Group> getMySiteGroups(String[] strings, boolean b, int i) throws PortalException, SystemException {
+		return null;
+	}
+
+	@Override
+	public List<Group> getMySiteGroups(String[] strings, int i) throws PortalException, SystemException {
+		return null;
+	}
+
+	@Override
 	public List<Group> getMySites() throws PortalException, SystemException {
 		// TODO Auto-generated method stub
 		return null;
@@ -840,9 +915,19 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
+	public long[] getOrganizationIds(boolean b) throws PortalException, SystemException {
+		return new long[0];
+	}
+
+	@Override
 	public List<Organization> getOrganizations() throws PortalException,
 			SystemException {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Organization> getOrganizations(boolean b) throws PortalException, SystemException {
 		return null;
 	}
 
@@ -900,6 +985,16 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
+	public RemotePreference getRemotePreference(String s) {
+		return null;
+	}
+
+	@Override
+	public Iterable<RemotePreference> getRemotePreferences() {
+		return null;
+	}
+
+	@Override
 	public long[] getRoleIds() throws SystemException {
 		// TODO Auto-generated method stub
 		return null;
@@ -908,6 +1003,16 @@ public class LiferayUserDummy implements User {
 	@Override
 	public List<Role> getRoles() throws SystemException {
 		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Group> getSiteGroups() throws PortalException, SystemException {
+		return null;
+	}
+
+	@Override
+	public List<Group> getSiteGroups(boolean b) throws PortalException, SystemException {
 		return null;
 	}
 
@@ -997,6 +1102,16 @@ public class LiferayUserDummy implements User {
 	}
 
 	@Override
+	public boolean isEmailAddressComplete() {
+		return false;
+	}
+
+	@Override
+	public boolean isEmailAddressVerificationComplete() {
+		return false;
+	}
+
+	@Override
 	public boolean isFemale() throws PortalException, SystemException {
 		// TODO Auto-generated method stub
 		return false;
@@ -1011,6 +1126,21 @@ public class LiferayUserDummy implements User {
 	@Override
 	public boolean isPasswordModified() {
 		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean isReminderQueryComplete() {
+		return false;
+	}
+
+	@Override
+	public boolean isSetupComplete() {
+		return false;
+	}
+
+	@Override
+	public boolean isTermsOfUseComplete() {
 		return false;
 	}
 
