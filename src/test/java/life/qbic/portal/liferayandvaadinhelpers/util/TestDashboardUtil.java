@@ -1,9 +1,9 @@
-package de.uni_tuebingen.qbic.util;
+package life.qbic.portal.liferayandvaadinhelpers.util;
 
-import static org.junit.Assert.*;
+import static org.truth0.Truth.ASSERT;
 
 import org.junit.Test;
-import static com.google.common.truth.Truth.ASSERT;
+
 
 public class TestDashboardUtil {
 
@@ -27,10 +27,8 @@ public class TestDashboardUtil {
     ASSERT.that(target).isEqualTo("108.0 KiB");
  
     target = DashboardUtil.humanReadableByteCount(110592, true);    
-    ASSERT.that(target).comparesEqualTo("110.6 kB");
+
     ASSERT.that(target).isEqualTo("110.6 kB");
-    
-    
 
     
     //M bytes
