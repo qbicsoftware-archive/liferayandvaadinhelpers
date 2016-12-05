@@ -32,9 +32,8 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 
-@RunWith(PowerMockRunner.class)
+
 
 public class TestLiferayAndVaadinUtils {
 	public class StubVaadinRequest implements VaadinRequest{
