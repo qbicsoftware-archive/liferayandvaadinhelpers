@@ -6,7 +6,7 @@
 	<groupId>life.qbic.openbis</groupId>
 	<artifactId>liferayandvaadinhelpers</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>Liferay and Vaadin helpers</name>
 
 	<prerequisites>
