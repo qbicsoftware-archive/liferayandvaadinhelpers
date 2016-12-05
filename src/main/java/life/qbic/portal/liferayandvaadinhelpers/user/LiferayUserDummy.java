@@ -721,7 +721,6 @@ public class LiferayUserDummy implements User {
 
 	@Override
 	public void addRemotePreference(RemotePreference remotePreference) {
-		
 	}
 
 	@Override
