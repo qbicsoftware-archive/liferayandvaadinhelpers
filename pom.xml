@@ -6,7 +6,7 @@
 	<groupId>life.qbic.openbis</groupId>
 	<artifactId>liferayandvaadinhelpers</artifactId>
 	<packaging>jar</packaging>
-	<version>1.1</version>
+	<version>1.1.1</version>
 	<name>Liferay and Vaadin helpers</name>
 
 	<prerequisites>
@@ -107,11 +107,11 @@
 			<artifactId>vaadin-client-compiled</artifactId>
 			<version>${vaadin.version}</version>
 		</dependency>
-		<dependency>
+		<!--<dependency>
 			<groupId>com.vaadin</groupId>
 			<artifactId>vaadin-client-compiler</artifactId>
 			<version>${vaadin.version}</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>com.liferay.portal</groupId>
 			<artifactId>portal-service</artifactId>
@@ -147,6 +147,11 @@
 			<groupId>com.google.truth</groupId>
 			<artifactId>truth</artifactId>
 			<version>0.22</version>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
 		</dependency>
 
 
