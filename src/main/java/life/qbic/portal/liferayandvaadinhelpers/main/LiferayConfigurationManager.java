@@ -11,7 +11,7 @@ import com.liferay.util.portlet.PortletProps; // util-java.jar
  * 
  */
 public enum LiferayConfigurationManager implements ConfigurationManager {
-	Instance;
+  Instance;
   public static final String DATASOURCE_KEY = "datasource";
   public static final String DATASOURCE_USER = "datasource.user";
   public static final String DATASOURCE_PASS = "datasource.password";
@@ -28,17 +28,19 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
   public static final String PATH_TO_GUSE_CERTIFICATE = "path_to_certificate";
   public static final String PATH_TO_WF_CONFIG = "path_to_wf_config";
 
+  public static final String PATH_TO_REFERENCE_CONFIG = "path_to_reference_config";
+
   public static final String PATH_TO_DROPBOXES = "path_to_dropboxes";
 
   public static final String GUSE_REMOTE_API_URL = "guse_remoteapi_url";
   public static final String GUSE_REMOTE_API_PASS = "guse_remoteapi_password";
-  
+
   public static final String ATTACHMENT_URI = "attachment.uri";
   public static final String ATTACHMENT_USER = "attachment.user";
   public static final String ATTACHMENT_PASS = "attachment.password";
   public static final String ATTACHMENT_MAX_SIZE = "max.attachment.size";
-  
-  public static final String MSQL_HOST  = "mysql.host";
+
+  public static final String MSQL_HOST = "mysql.host";
   public static final String MSQL_DB = "mysql.db";
   public static final String MSQL_USER = "mysql.user";
   public static final String MSQL_PORT = "mysql.port";
@@ -61,16 +63,18 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
   private String pathToGuseCertificate;
   private String pathToWFConfig;
 
+  private String pathToReferenceConfig;
+
   private String pathToDropboxes;
 
   private String guseRemoteApiUrl;
   private String guseRemoteApiPass;
-  
+
   private String attachmentURI;
   private String attachmentUser;
   private String attachmentPass;
   private String attachmentMaxSize;
-  
+
   private String msqlHost;
   private String msqlDB;
   private String msqlUser;
@@ -104,22 +108,24 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
     pathToGuseCertificate = portletConfig.getProperty(PATH_TO_GUSE_CERTIFICATE);
     pathToWFConfig = portletConfig.getProperty(PATH_TO_WF_CONFIG);
 
+    pathToReferenceConfig = portletConfig.getProperty(PATH_TO_REFERENCE_CONFIG);
+
     pathToDropboxes = portletConfig.getProperty(PATH_TO_DROPBOXES);
 
     guseRemoteApiUrl = portletConfig.getProperty(GUSE_REMOTE_API_URL);
     guseRemoteApiPass = portletConfig.getProperty(GUSE_REMOTE_API_PASS);
-   
+
     attachmentURI = portletConfig.getProperty(ATTACHMENT_URI);
     attachmentUser = portletConfig.getProperty(ATTACHMENT_USER);
     attachmentPass = portletConfig.getProperty(ATTACHMENT_PASS);
     attachmentMaxSize = portletConfig.getProperty(ATTACHMENT_MAX_SIZE);
-    
+
     msqlHost = portletConfig.getProperty(MSQL_HOST);
     msqlDB = portletConfig.getProperty(MSQL_DB);
     msqlUser = portletConfig.getProperty(MSQL_USER);
     msqlPort = portletConfig.getProperty(MSQL_PORT);
     msqlPass = portletConfig.getProperty(MSQL_PASS);
-    
+
     initialized = true;
   }
 
@@ -235,47 +241,55 @@ public enum LiferayConfigurationManager implements ConfigurationManager {
 
   @Override
   public String getAttachmentURI() {
-  	return attachmentURI;
+    return attachmentURI;
   }
 
   @Override
   public String getAttachmentUser() {
-  	return attachmentUser;
+    return attachmentUser;
   }
 
   @Override
   public String getAttachmenPassword() {
-  	return attachmentPass;
+    return attachmentPass;
   }
 
   @Override
   public String getAttachmentMaxSize() {
-  	return attachmentMaxSize;
+    return attachmentMaxSize;
   }
 
-	@Override
-	public String getMsqlHost() {
-		return msqlHost;
-	}
-	
-	@Override
-	public String getMysqlPort() {
-		return msqlPort;
-	}
-	
-	@Override
-	public String getMysqlDB() {
-		return msqlDB;
-	}
-	
-	@Override
-	public String getMysqlUser() {
-		return msqlUser;
-	}
-	
-	@Override
-	public String getMysqlPass() {
-		return msqlPass;
-	}
+  @Override
+  public String getMsqlHost() {
+    return msqlHost;
+  }
+
+  @Override
+  public String getMysqlPort() {
+    return msqlPort;
+  }
+
+  @Override
+  public String getMysqlDB() {
+    return msqlDB;
+  }
+
+  @Override
+  public String getMysqlUser() {
+    return msqlUser;
+  }
+
+  @Override
+  public String getMysqlPass() {
+    return msqlPass;
+  }
+
+  public String getPathToReferenceConfig() {
+    return pathToReferenceConfig;
+  }
+
+  public void setPathToReferenceConfig(String pathToReferenceConfig) {
+    this.pathToReferenceConfig = pathToReferenceConfig;
+  }
 
 }

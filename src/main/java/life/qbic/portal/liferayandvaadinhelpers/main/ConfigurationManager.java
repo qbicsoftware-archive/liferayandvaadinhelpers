@@ -42,6 +42,10 @@ public interface ConfigurationManager {
 
   public void setPathToWFConfig(String pathToWFConfig);
 
+  public String getPathToReferenceConfig();
+
+  public void setPathToReferenceConfig(String pathToReferenceConfig);
+
   public String getPathToDropboxes();
 
   void setPathToDropboxes(String pathToDropboxes);
@@ -57,20 +61,20 @@ public interface ConfigurationManager {
   public void setGuseRemoteApiPass(String guseRemoteApiPass);
 
   public String getAttachmentURI();
-  
+
   public String getAttachmentUser();
-  
+
   public String getAttachmenPassword();
-  
+
   public String getAttachmentMaxSize();
-  
+
   public String getMsqlHost();
-  
+
   public String getMysqlPort();
-  
+
   public String getMysqlDB();
-  
+
   public String getMysqlUser();
-  
+
   public String getMysqlPass();
 }
