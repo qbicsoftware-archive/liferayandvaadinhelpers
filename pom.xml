@@ -160,8 +160,6 @@
 
 	</dependencies>
 
-
-
 	<distributionManagement>
 		<repository>
 			<uniqueVersion>false</uniqueVersion>
